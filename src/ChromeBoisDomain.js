@@ -3,19 +3,21 @@ import { drawChromeBoiAtCoords, toggleCycling, resize } from './canvasHelpers.js
 
 
 export default class ChromeBoisDomain extends Component {
-      constructor(props) {
-        super(props);
-        this.handleMouseMove = this.handleMouseMove.bind(this);
-        this.state = { x: 0, y: 0 };
-      }
+      // constructor(props) {
+      //   super(props);
+      //   this.handleMouseMove = this.handleMouseMove.bind(this);
+      //   this.state = { x: 0, y: 0 };
+      // }
       handleMouseMove(event) {
-        this.setState({
-          x: event.clientX,
-          y: event.clientY
-        });
-        drawChromeBoiAtCoords(this.state.x,this.state.y)
+        const x = event.clientX
+        const y = event.clientY
+        // this.setState({
+        //   x: event.clientX,
+        //   y: event.clientY
+        // });
+        drawChromeBoiAtCoords(x, y)
       }
-
+//lab says not to use state so I have done without it.
       resizeHandler(event){
         if(event.key === 's' || event.key === 'S'){
           resize('-')
